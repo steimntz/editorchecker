@@ -4,7 +4,7 @@ services:
   - docker
 
 script:
-  - docker build -t steimntz/editorchecker
+  - docker build -t steimntz/editorchecker .
 
 deploy:
   provider: script
