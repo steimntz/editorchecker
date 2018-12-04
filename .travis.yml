@@ -5,9 +5,4 @@ services:
 
 script:
   - docker build -t steimntz/editorchecker .
-
-deploy:
-  provider: script
-  script: ./.bin/push
-  on:
-    branch: master
+  - ./.bin/push
