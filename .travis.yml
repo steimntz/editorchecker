@@ -1,4 +1,4 @@
-language: shellscript
+language: bash
 
 services:
   - docker
