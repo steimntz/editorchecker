@@ -3,6 +3,11 @@ language: node
 services:
   - docker
 
-script:
-  - docker build -t steimntz/editorchecker .
-  - ./.bin/push
+jobs:
+  include:
+    - stage: tests
+    - script: find `pwd` -name *.tests.sh | xargs -I {} bash "{}"
+    - stage: build
+    - script: docker build -t steimntz/editorchecker .
+    - stage: deploy
+    - script: ./.bin/push
