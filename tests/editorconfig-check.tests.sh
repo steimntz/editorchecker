@@ -8,9 +8,9 @@ expected="git --git-dir=./windson/.git diff-tree --no-commit-id --name-only -r A
 assertEquals "$output" "$expected"
 
 output="$(debug=on $BASEDIR/../src/editorconfig-check.sh ./windson A)"
-expected="Usage: tests/../src/editorconfig-check.sh DIR BEFORE_COMMIT CURRENT_COMMIT"
+expected="Usage: $BASEDIR/../src/editorconfig-check.sh DIR BEFORE_COMMIT CURRENT_COMMIT"
 assertEquals "$output" "$expected"
 
 output="$(debug=on $BASEDIR/../src/editorconfig-check.sh ./windson 0000000000000000000000000000000000000000 B)"
-expected="Usage: tests/../src/editorconfig-check.sh DIR BEFORE_COMMIT CURRENT_COMMIT"
+expected="Usage: $BASEDIR/../src/editorconfig-check.sh DIR BEFORE_COMMIT CURRENT_COMMIT"
 assertEquals "$output" "$expected"
