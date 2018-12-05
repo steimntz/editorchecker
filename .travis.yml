@@ -7,7 +7,6 @@ jobs:
   include:
     - stage: tests
     - script: find `pwd` -name *.tests.sh | xargs -I {} bash "{}"
-    - stage: build
+    - stage: build_promotion
     - script: docker build -t steimntz/editorchecker .
-    - stage: deploy
     - script: ./.bin/push
