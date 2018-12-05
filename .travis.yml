@@ -8,5 +8,4 @@ jobs:
     - stage: tests
     - script: find `pwd` -name *.tests.sh | xargs -I {} bash "{}"
     - stage: build_promotion
-    - script: docker build -t steimntz/editorchecker .
-    - script: ./.bin/push
+    - script: docker build -t steimntz/editorchecker . && ./.bin/push
